@@ -1,0 +1,24 @@
+<div class="crear">
+    <button class="btn btn-primary botoncrear" routerLink= "/crear-producto">Nuevo producto</button>
+
+</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let producto of productos">
+                <div class="card">
+                    <img src="{{producto.imagen}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{producto.nombre}}</h5>
+                      <p class="card-text">{{producto.descripcion}}</p>
+                      <h5>${{producto.precio}}</h5>
+                      <button class="btn btn-primary" [routerLink]="['/editar-producto', producto.idproducto]">Editar</button>
+                      <button class="btn btn-danger" (click)="eliminarProducto(producto.idproducto)">Eliminar</button>
+                    </div>
+                  </div>                
+            </div>              
+        </div>        
+    </div>
+
+
+    

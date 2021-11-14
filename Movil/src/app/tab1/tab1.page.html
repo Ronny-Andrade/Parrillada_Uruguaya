@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    
+  <div class="contenedor">
+      <div class="contenedor" id="slides">
+          <ion-slides mode="ios" pager="ios" [options]="slideOptsOne" >
+              <ion-slide *ngFor="let o of ofertas | async">
+                  <img class="imagen" style="height: 350px;" src='{{o.imagen}}'>                
+              </ion-slide>
+          </ion-slides>
+      </div>
+  </div>
+  <ion-label><b>Menú</b></ion-label>
+  <ion-card routerLink="/tabs/tab2">
+      <img class="imagen" src="https://cdn.kiwilimon.com/articuloimagen/30103/28193.jpg">
+  </ion-card>
+  
+  <ion-label><b>Cupones(No funcional)</b></ion-label>
+  <ion-card>
+      <img class="imagen" src="https://marketing4ecommerce.net/wp-content/uploads/2018/02/cupones-descuento.jpg">
+  </ion-card>
+  
+  </ion-content>
+

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "parrilladauruguaya-bb159"
+  },
+  "targets": {
+    "parrilladauruguaya-bb159": {
+      "hosting": {
+        "app": [
+          "parrilladauruguaya-bb159"
+        ]
+      }
+    }
+  }
+}

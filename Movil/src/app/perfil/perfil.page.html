@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <p><strong>Nombre: </strong>{{usuario.name}}</p>
+    </ion-item>
+    <ion-item>
+      <p><strong>Email: </strong>{{usuario.email}}</p>
+    </ion-item>
+    <ion-item>
+      <p><strong>Cédula: </strong>{{usuario.ide_card}}</p>
+    </ion-item>
+    <ion-item>
+      <p><strong>Teléfono: </strong>{{usuario.cell_phone}}</p>
+    </ion-item>
+    
+  </ion-list>
+  <ion-button type="submit" expand="block" (click)="logout()" >Cerrar sesión</ion-button>
+
+</ion-content>

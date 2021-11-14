@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <div class="contenedor" id="principal">
+    <form>
+      <ion-item>
+        <img src="https://jardinesplaza.com.ec/wp-content/uploads/2020/11/Rou-jardines-plaza-via-samborondon-comida-area-medica-cafeteria-1024x1024.png">
+      </ion-item>
+      <ion-item lines='full'>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="datainfo.email" name="email"
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"></ion-input>
+      </ion-item>
+    
+      <ion-item lines='full'>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="datainfo.password" name="password"></ion-input>
+      </ion-item>
+    
+      <ion-row class="">
+        <ion-col class="">
+          <ion-button type="submit" (click)="onLogin()" expand="block" color="success">
+            Aceptar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    
+    </form>
+
+    <ion-row>
+      <ion-col>
+        <p> ¿Olvidaste tu contraseña?<a routerLink="/forgot-password"> Recuperar contraseña</a>
+        </p>
+      </ion-col>
+    </ion-row>
+
+  </div>
+  
+  <div>
+    <ion-row class="">
+      <ion-col class="">
+        <ion-button expand="block" color="primary">
+          Iniciar sesion con Facebook
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="">
+      <ion-col class="">
+        <ion-button type="submit" expand="block" (click)="onLoginGoogle()" color="light">
+          Iniciar sesion con Google
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </div>
+  <div>
+    <p>¿Aun no tienes una cuenta? <a class="vinculoLogin" routerLink='/register'>Registrate ahora</a></p>
+      <hr class="separacion">
+      
+  </div>
+
+    
+
+</ion-content>

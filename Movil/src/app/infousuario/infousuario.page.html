@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Continuar registro....</ion-title>
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content>
+  <ion-item class="container">
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input type="text" #nombre></ion-input>
+  </ion-item>
+
+  <ion-item class="container">
+    <ion-label position="floating">Correo</ion-label>
+    <ion-input type="text" #correo></ion-input>
+  </ion-item>
+
+  <ion-item lines='full'>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" #pass_field></ion-input>
+  </ion-item>
+
+  
+  <ion-button expand="block" (click)="savePost(nombre, correo, pass_field)">Aceptar</ion-button>
+
+</ion-content>

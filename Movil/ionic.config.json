@@ -1,0 +1,8 @@
+{
+  "name": "rou",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

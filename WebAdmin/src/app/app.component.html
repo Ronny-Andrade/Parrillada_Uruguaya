@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+      <span>Parrillada Uruguaya</span>
+      <span class="example-spacer"></span>
+      <button type="button" class="btn btn-danger">Login</button>
+    </mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode ="side" opened>
+        <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option *ngFor="let opcion of opciones" [value]="opcion" [routerLink]= "opcion.route">
+              {{opcion.name}}
+            </mat-list-option>
+        </mat-selection-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
