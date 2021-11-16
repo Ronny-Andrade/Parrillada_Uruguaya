@@ -23,7 +23,11 @@
 
         <mat-selection-list #shoes [multiple]="false">
             <mat-list-option *ngFor="let opcion of opciones" [value]="opcion" [routerLink]= "opcion.route" class="menu-options">
-              {{opcion.name}}
+                <div><mat-icon >
+                    {{opcion.icon}}
+                </mat-icon>
+                <span>{{opcion.name}}</span>
+                </div>
             </mat-list-option>
         </mat-selection-list>
 
@@ -32,7 +36,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <div class="content mat-elevation-z8">
-
+            
             <router-outlet></router-outlet>
         </div>
         

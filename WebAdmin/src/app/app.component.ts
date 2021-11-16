@@ -34,14 +34,14 @@ export class AppComponent {
   title = 'projectoPU';
   showFiller = false;
   opciones = [
-    {name: 'Dashboard', route: '', },
-    {name: 'Pedidos', route: '', },
-    {name: 'Combos', route: 'combos', },
-    {name: 'Nuestros Platos', route: 'productos', },
-    {name: 'Reclamos y sugerencias', route: '', },
-    {name: 'Usuarios', route: 'usuarios', },
-    {name: 'Notificaciones Push', route: '', },
-    {name: 'Administración', route: '', },
+    {name: 'Dashboard', route: '', icon:'dashboard'},
+    {name: 'Pedidos', route: '', icon:'assignment'},
+    {name: 'Combos', route: 'combos', icon:'fastfood'},
+    {name: 'Nuestros Platos', route: 'productos', icon:'food_bank'},
+    {name: 'Reclamos y sugerencias', route: '', icon:'comment'},
+    {name: 'Usuarios', route: 'usuarios', icon:'supervisor_account'},
+    {name: 'Notificaciones Push', route: '', icon:'notifications'},
+    {name: 'Administración', route: '', icon:'settings'},
   ]
 
 }

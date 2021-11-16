@@ -9,13 +9,18 @@
 
 mat-sidenav {
     margin: 16px;
-    width: 200px;
+    width: 300px;
     border-right: none;
     background: #002b5c;
     color: white;
     border-radius: 10px;
     padding: 16px;
     text-align: center;
+}
+
+mat-icon {
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 .content {
@@ -25,7 +30,7 @@ mat-sidenav {
     margin-left: 32px;
 
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: top;
 }
 
@@ -40,14 +45,12 @@ mat-sidenav-container {
     justify-content: flex-start;
     font-size: 1rem;
 
-    mat-icon {
-        margin-right: 8px;
-    }
 }
 
 .menu-options {
     color: white;
     font-size: 1rem;
+    text-align: left;
 }
 
 .avatar {
