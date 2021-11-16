@@ -16,6 +16,7 @@ import { ProductosComponent } from './componentes/productos/productos.component'
 import { UsuariomodalsComponent } from './modals/usuariomodals/usuariomodals.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { EditarProductoComponent } from './componentes/productos/editar-producto/editar-producto.component';
 import { CombosComponent } from './componentes/combos/combos.component';
 import { EditarCombosComponent } from './componentes/combos/editar-combos/editar-combos.component';
@@ -42,6 +43,7 @@ import { EditarCombosComponent } from './componentes/combos/editar-combos/editar
     HttpClientModule,
     MatDialogModule,
     MatButtonModule,
+    MatIconModule,
     FormsModule,
     ReactiveFormsModule
     
