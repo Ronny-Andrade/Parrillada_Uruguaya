@@ -29,6 +29,7 @@ class User(AbstractUser):
     email = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=45)  # Field renamed because it was a Python reserved word.
     status = models.IntegerField(blank=True, null=True)
+    fechanac = models.DateField(blank=True, null=True)
     username = None
 
     USERNAME_FIELD = 'email'

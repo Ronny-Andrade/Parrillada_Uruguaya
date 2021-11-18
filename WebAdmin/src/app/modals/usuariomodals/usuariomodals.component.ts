@@ -10,14 +10,15 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class UsuariomodalsComponent implements OnInit {
 
    usuario: any = {
-    nombre: '',
-    cedula: '',
-    correo: '',
-    telefono: 0,
-    pass_field: '',
+    idrolusuario: 0,
+    ide_card: '',
+    cell_phone: '',
+    name: '',
+    email: '',
+    password: '',
     fechanac: new Date(),
-    estado: '',
-    idrolusuario: 0
+    status: 0,
+    
   };
 
   edit: boolean = false;
@@ -39,9 +40,11 @@ export class UsuariomodalsComponent implements OnInit {
   }
 
   guardarUsuario(){
+    console.log(this.usuario)
     this.usuarioService.saveUsuario(this.usuario).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/sidenav/usuarios']);
       },
       err => console.error(err)
     )
@@ -49,9 +52,8 @@ export class UsuariomodalsComponent implements OnInit {
 
   actualizarUsuario(){
     this.usuarioService.updateUsuario(this.usuario.idusuario,this.usuario).subscribe(
-      res => {
-        alert("El usuario ha sido agregado de forma correcta");
-        this.router.navigate(['usuarios']);
+      res => {        
+        this.router.navigate(['/sidenav/usuarios']);
       },
       err => console.error(err)
     )

@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header card-header-danger">
                         
-                        <button type="button" routerLink= "/crear-usuario" class="btn btn-primary">Nuevo usuario</button>
+                        <button type="button" routerLink= "/sidenav/crear-usuario" class="btn btn-primary">Nuevo usuario</button>
                     </div>
                     <div class="card-body" >
                         <div class="table-responsive">
@@ -28,20 +28,20 @@
                                 <tbody *ngFor="let usuario of usuarios">
                                     <tr>
                                         <td>
-                                            {{usuario.nombre}}
+                                            {{usuario.name}}
                                         </td>
                                         <td>
-                                            {{usuario.telefono}}
+                                            {{usuario.cell_phone}}
                                         </td>
                                         <td>
-                                            {{usuario.cedula}}
+                                            {{usuario.ide_card}}
                                         </td>
                                         <td>
-                                            {{usuario.correo}}
+                                            {{usuario.email}}
                                         </td>
                                         <td>                                          
-                                        <button class="btn btn-primary" [routerLink]="['/editar-usuario', usuario.idusuario]">Editar</button>
-                                        <button class="btn btn-danger" (click)= "eliminarUsuario(usuario.idusuario)">Eliminar</button>
+                                        <button class="btn btn-primary" [routerLink]="['/sidenav/editar-usuario', usuario.id]">Editar</button>
+                                        <button class="btn btn-danger" (click)= "eliminarUsuario(usuario.id)">Eliminar</button>
                                       </td>
                                     </tr>
                                     

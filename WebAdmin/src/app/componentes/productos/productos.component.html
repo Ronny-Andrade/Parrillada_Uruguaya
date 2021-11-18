@@ -1,5 +1,5 @@
 <div class="crear">
-    <button class="btn btn-primary botoncrear" routerLink= "/crear-producto">Nuevo producto</button>
+    <button class="btn btn-primary botoncrear" routerLink= "/sidenav/crear-producto">Nuevo producto</button>
 
 </div>
 
@@ -12,7 +12,7 @@
                       <h5 class="card-title">{{producto.nombre}}</h5>
                       <p class="card-text">{{producto.descripcion}}</p>
                       <h5>${{producto.precio}}</h5>
-                      <button class="btn btn-primary" [routerLink]="['/editar-producto', producto.idproducto]">Editar</button>
+                      <button class="btn btn-primary" [routerLink]="['/sidenav/editar-producto', producto.idproducto]">Editar</button>
                       <button class="btn btn-danger" (click)="eliminarProducto(producto.idproducto)">Eliminar</button>
                     </div>
                   </div>                

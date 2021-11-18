@@ -1,33 +1,33 @@
 <div class="container-fluid">
     <form action="">
         <div class="form-group mb-3">
-            <input type="text" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre" class="form-control" autofocus>
+            <input type="text" name="nombre" [(ngModel)]="usuario.name" placeholder="Nombre" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
-            <input type="text" name="cedula" [(ngModel)]="usuario.cedula" placeholder="Cédula" class="form-control" autofocus>
+            <input type="text" name="cedula" [(ngModel)]="usuario.ide_card" placeholder="Cédula" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
-            <input type="text" name="correo" [(ngModel)]="usuario.correo" placeholder="Correo" class="form-control" autofocus>
+            <input type="text" name="correo" [(ngModel)]="usuario.email" placeholder="Correo" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
-            <input type="text" name="telefono" [(ngModel)]="usuario.telefono" placeholder="Teléfono" class="form-control" autofocus>
+            <input type="text" name="telefono" [(ngModel)]="usuario.cell_phone" placeholder="Teléfono" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
-            <input type="text" name="contraseña" [(ngModel)]="usuario.pass_field" placeholder="Contraseña" class="form-control" autofocus>
+            <input type="text" name="contraseña" [(ngModel)]="usuario.password" placeholder="Contraseña" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
             <input type="date" name="fecha-nacimiento" [(ngModel)]="usuario.fechanac" placeholder="Fecha de nacimiento" class="form-control" autofocus>
         </div>
         <div class="form-group mb-3">
-            <select class="form-control" name="estado" [(ngModel)]="usuario.estado">
+            <select class="form-control" name="estado" [(ngModel)]="usuario.status">
                 <option selected disabled>Selecciona un estado</option>
-                <option value="Activo" >Activasdasdaso</option>
-                <option value="Inactivo">Inactivo</option>
+                <option value= 1 >Activo</option>
+                <option value= 0>Inactivo</option>
             </select>
         </div>
         <div class="form-group mb-3">
             <select class="form-control" name="rol" [(ngModel)]="usuario.idrolusuario">
-                <option selected>Selecciona un rol</option>
+                <option selected disabled>Selecciona un rol</option>
                 <option value= 1>Administrador</option>
                 <option value= 2>Cliente</option>
             </select>
@@ -35,7 +35,7 @@
         <button class="btn btn-success btn-block" (click)="edit ? actualizarUsuario() : guardarUsuario()">
             Guardar
         </button>
-        <button class="btn btn-primary" routerLink= "/usuarios">Cancelar</button>
+        <button class="btn btn-primary" routerLink= "/sidenav/usuarios">Cancelar</button>
     </form>
 
 </div>

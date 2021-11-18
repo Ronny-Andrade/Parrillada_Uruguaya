@@ -14,8 +14,9 @@
         <label class="lbl-text">Usuario</label>
         <input type="text"
         class="form-control"
+        [(ngModel)]="datainfo.email"
         placeholder="Ingrese su usuario"
-        name="username"
+        name="email"
         />
       </div>
       <br/>
@@ -26,6 +27,7 @@
       <label class="lbl-text">Contraseña</label>
         <input type="password"
         class="form-control"
+        [(ngModel)]="datainfo.password"
         placeholder="Ingrese su contraseña"
         name="password"
         />
@@ -33,7 +35,8 @@
       <br/>
       <div class="col-lg-4 offset-lg-5">
         <button type="button"
-        class="btn btn-dark mb-2" >Login</button>
+        class="btn btn-dark mb-2"
+        (click)="onLogin()" >Login</button>
       </div>
       <br/>
     </form>

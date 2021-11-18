@@ -11,23 +11,23 @@ export class ProductoService {
   constructor(private http: HttpClient) { }
 
   getData(){
-    return this.http.get('https://ricardovilcacundo.pythonanywhere.com/pro/productos/');
+    return this.http.get('http://localhost:8000/api/productos/');
   }
 
   getProductoById(id: string){
-    return this.http.get(`https://ricardovilcacundo.pythonanywhere.com/pro/productos/${id}/`);
+    return this.http.get(`http://localhost:8000/api/productos/${id}/`);
   }
 
   saveProducto(producto:Producto){
-    return this.http.post(`https://ricardovilcacundo.pythonanywhere.com/pro/productos/`, producto);
+    return this.http.post(`http://localhost:8000/api/productos/`, producto);
   }
 
   deleteProducto(id: string){
-    return this.http.delete(`https://ricardovilcacundo.pythonanywhere.com/pro/productos/${id}/`);
+    return this.http.delete(`http://localhost:8000/api/productos/${id}/`);
   }
 
   updateProducto(id: string|number , updateProducto:Producto){
-    return this.http.put(`https://ricardovilcacundo.pythonanywhere.com/pro/productos/${id}`, updateProducto);
+    return this.http.put(`http://localhost:8000/api/productos/${id}`, updateProducto);
   }
 
 }

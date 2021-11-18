@@ -1,11 +1,11 @@
 export interface Usuario{
     id?: number;
-    nombre: string;
-    cedula: string;
-    correo: string;
-    telefono: number;
-    pass_field: string;
-    fechanac: Date;
-    estado: string;
     idrolusuario: number
+    ide_card: string;
+    cell_phone: number;
+    name: string;
+    email: string;
+    password: string;    
+    fechanac: Date;
+    status: number;
 }
