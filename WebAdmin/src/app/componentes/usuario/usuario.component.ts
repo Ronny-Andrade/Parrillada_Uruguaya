@@ -9,6 +9,7 @@ import {UsuarioService} from '../../services/usuario.service';
 export class UsuarioComponent implements OnInit {
 
   usuarios: any = [];
+  columnsToDisplay = ['id','nombre','correo','telefono','fechaNac','opciones'];
 
   constructor(private usuarioService:UsuarioService) { }
 

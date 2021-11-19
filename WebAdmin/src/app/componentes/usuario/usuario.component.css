@@ -1,3 +1,24 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+
+  mat-icon {
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.text-wi{
+  vertical-align: middle;
+}
+
+.main-table{
+  width: calc(100vw - 350px);
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.table-tb{
+  position: sticky;
+  z-index: 1001;
+}

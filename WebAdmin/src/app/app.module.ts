@@ -23,6 +23,8 @@ import { EditarCombosComponent } from './componentes/combos/editar-combos/editar
 import { MatTreeModule } from '@angular/material/tree';
 import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { LoginComponent } from './componentes/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatTreeModule,
+    MatTableModule,
+
     
   ],
   providers: [UsuarioService, ProductoService],

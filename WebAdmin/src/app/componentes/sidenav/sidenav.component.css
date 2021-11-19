@@ -28,7 +28,7 @@ mat-icon {
     border-radius: 10px;
     margin: 16px;
     margin-left: 32px;
-
+    width: calc(100vw - 350px);
     display: flex;
     justify-content: left;
     align-items: top;
