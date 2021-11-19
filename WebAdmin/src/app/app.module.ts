@@ -24,7 +24,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { MatTableModule } from '@angular/material/table';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -55,7 +55,7 @@ import { MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatTreeModule,
     MatTableModule,
-
+    MatFormFieldModule,
     
   ],
   providers: [UsuarioService, ProductoService],
