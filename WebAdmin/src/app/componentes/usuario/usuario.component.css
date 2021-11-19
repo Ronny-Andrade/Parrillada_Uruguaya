@@ -1,6 +1,7 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+<<<<<<< HEAD
 
   mat-icon {
     vertical-align: middle;
@@ -22,3 +23,6 @@
   position: sticky;
   z-index: 1001;
 }
+=======
+  
+>>>>>>> 8dab7d07f1ad100d270d43485aaa6dd2e2e9176e

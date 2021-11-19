@@ -1,4 +1,4 @@
-from rest_framework import serializers, viewsets
+from rest_framework import viewsets
 from .models import Producto, Tipoproducto
 from .serializer import ProductoSerializer, TipoProductoSerializer
 
