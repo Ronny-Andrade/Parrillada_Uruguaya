@@ -5,9 +5,13 @@ import { ProductoService } from './services/producto.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './componentes/usuario/usuario.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
@@ -52,6 +56,9 @@ import { LoginComponent } from './componentes/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     MatTreeModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule
     
   ],
   providers: [UsuarioService, ProductoService],
