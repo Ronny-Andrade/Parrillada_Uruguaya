@@ -23,7 +23,7 @@
                 <option value= 3>Bebidas</option>                
             </select>
             <div class="btn btn-success btn-block" (click)="edit ? actualizarProducto() : guardarProducto()">Guardar</div>
-            <button class="btn btn-primary" routerLink= "/productos">Cancelar</button>
+            <button class="btn btn-primary" (click)="goBack()">Cancelar</button>
         </div>
     </form>
 </div>

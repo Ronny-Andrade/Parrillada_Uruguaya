@@ -51,7 +51,7 @@ export class UsuariomodalsComponent implements OnInit {
   }
 
   actualizarUsuario(){
-    this.usuarioService.updateUsuario(this.usuario.idusuario,this.usuario).subscribe(
+    this.usuarioService.updateUsuario(this.usuario.id,this.usuario).subscribe(
       res => {        
         this.router.navigate(['/sidenav/usuarios']);
       },

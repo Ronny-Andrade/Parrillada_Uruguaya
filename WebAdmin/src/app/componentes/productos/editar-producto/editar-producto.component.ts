@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductoService} from '../../../services/producto.service';
 import {Router, ActivatedRoute} from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-producto',
@@ -21,7 +22,7 @@ export class EditarProductoComponent implements OnInit {
   
   edit: boolean = false;
 
-  constructor(private productoService:ProductoService, private activatedRoute: ActivatedRoute, private router: Router ) { }
+  constructor(private productoService:ProductoService, private activatedRoute: ActivatedRoute, private router: Router, private location: Location ) { }
 
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
@@ -68,4 +69,13 @@ export class EditarProductoComponent implements OnInit {
       err => console.error(err)
     )
   }
+
+  goBack() {
+    // window.history.back();
+    this.location.back();
+
+    console.log( 'goBack()...' );
+  }
+
+  
 }
