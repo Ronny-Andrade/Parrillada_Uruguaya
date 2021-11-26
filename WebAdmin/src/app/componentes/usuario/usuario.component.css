@@ -1,7 +1,6 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-<<<<<<< HEAD
 
   mat-icon {
     vertical-align: middle;
@@ -15,14 +14,28 @@
 .main-table{
   width: calc(100vw - 350px);
   height: calc(100vh - 200px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .table-tb{
   position: sticky;
   z-index: 1001;
 }
-=======
-  
->>>>>>> 8dab7d07f1ad100d270d43485aaa6dd2e2e9176e
+
+mat-form-field {
+  width: 95%;
+  margin-left:20px;
+
+}
+
+.mat-column-name{
+  flex: 0 0 25%;
+}
+
+.mat-column-mail{
+  flex: 0 0 20%;
+}
+
+.mat-column-opciones{
+  flex: 0 0 10%;
+}

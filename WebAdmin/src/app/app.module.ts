@@ -27,9 +27,9 @@ import { EditarCombosComponent } from './componentes/combos/editar-combos/editar
 import { MatTreeModule } from '@angular/material/tree';
 import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { MatTableModule } from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { MatTableDataSource } from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -59,13 +59,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     ReactiveFormsModule,
     MatTreeModule,
     MatTableModule,
-<<<<<<< HEAD
     MatFormFieldModule,
-=======
-    MatPaginatorModule,
-    MatFormFieldModule
->>>>>>> 8dab7d07f1ad100d270d43485aaa6dd2e2e9176e
-    
+    MatInputModule,
+    MatSortModule,
+
   ],
   providers: [UsuarioService, ProductoService],
   bootstrap: [AppComponent]
