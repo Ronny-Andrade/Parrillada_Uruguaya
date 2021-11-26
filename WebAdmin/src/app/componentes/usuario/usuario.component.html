@@ -4,7 +4,7 @@
     <mat-toolbar class="table-tb">
         <span>Listado de usuarios</span>
         <span class="example-spacer"></span>
-        <button type="button" class="btn btn-success">
+        <button type="button" routerLink= "/sidenav/crear-usuario" class="btn btn-success">
             <mat-icon >
                 add_circle_outline
             </mat-icon>
@@ -46,18 +46,19 @@
         <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
         <mat-cell *matCellDef="let usuario"> {{usuario.ide_card}} </mat-cell>
     </ng-container>
+    
     <ng-container matColumnDef="opciones">
         <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
         <mat-cell *matCellDef="let usuario"> 
-            <mat-icon >
+            <button class="btn btn-primary-outline btn-sm"><mat-icon >
                 block
-            </mat-icon>
-            <mat-icon >
+            </mat-icon></button>
+            <button class="btn btn-primary-outline btn-sm"><mat-icon >
                 edit
-            </mat-icon>
-            <mat-icon >
+            </mat-icon></button>
+            <button class="btn btn-primary-outline btn-sm"><mat-icon >
                 delete
-            </mat-icon>
+            </mat-icon></button>
         </mat-cell>
     </ng-container>
 
