@@ -49,14 +49,14 @@
     
     <ng-container matColumnDef="opciones">
         <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
-        <mat-cell *matCellDef="let usuario"> 
+        <mat-cell *matCellDef="let usuario; let i=index;"> 
             <button class="btn btn-primary-outline btn-sm"><mat-icon >
                 block
             </mat-icon></button>
-            <button class="btn btn-primary-outline btn-sm"><mat-icon >
+            <button class="btn btn-primary-outline btn-sm" [routerLink]="['/sidenav/editar-usuario', usuario.id]"><mat-icon >
                 edit
             </mat-icon></button>
-            <button class="btn btn-primary-outline btn-sm"><mat-icon >
+            <button class="btn btn-primary-outline btn-sm" (click)="eliminarUsuario(usuario.id)"><mat-icon >
                 delete
             </mat-icon></button>
         </mat-cell>
