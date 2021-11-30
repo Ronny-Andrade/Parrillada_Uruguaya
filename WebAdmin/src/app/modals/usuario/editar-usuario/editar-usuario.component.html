@@ -29,8 +29,10 @@
                 <option value= 2>Cliente</option>
             </select>
         </div>
-        <button class="btn btn-success btn-block" (click)="actualizarUsuario()">
+        <div class="text-end">
+        <button class="btn btn-primary " (click)="actualizarUsuario()">
             Guardar
         </button>
-        <button class="btn btn-primary" [mat-dialog-close]="true">Cancelar</button>
+        <button class="btn btn-danger " [mat-dialog-close]="true">Cancelar</button>
+        </div>
     </form>

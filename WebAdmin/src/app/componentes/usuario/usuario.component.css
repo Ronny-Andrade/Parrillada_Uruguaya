@@ -13,8 +13,8 @@
 
 .main-table{
   width: calc(100vw - 350px);
-  height: calc(100vh - 200px);
-  overflow: auto;
+  height: calc(100vh - 150px);
+  overflow:auto;
 }
 
 .table-tb{
@@ -32,12 +32,27 @@ mat-form-field {
   flex: 0 0 25%;
 }
 
+.mat-column-ide_card{
+  flex: 0 0 12.5%;
+}
+
 .mat-column-mail{
   flex: 0 0 20%;
 }
 
+.mat-column-cell_phone{
+  flex: 0 0 12.5%;
+}
+
+.mat-column-fechanac{
+  flex: 0 0 10%;
+}
 
 .mat-column-opciones{
+  flex: 0 0 10%;
+}
+
+.mat-column-rol{
   flex: 0 0 10%;
 }
 

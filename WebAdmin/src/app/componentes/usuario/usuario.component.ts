@@ -20,7 +20,7 @@ export class UsuarioComponent implements OnInit {
 
   usuarios: any = [];
   ELEMENT_DATA: Usuario[]=[];
-  columnsToDisplay: string[] = ['name','ide_card','email','cell_phone','fechanac','opciones'];
+  columnsToDisplay: string[] = ['rol','name','ide_card','email','cell_phone','fechanac','opciones'];
   dataSource = new MatTableDataSource<Usuario>(this.ELEMENT_DATA);
 
 
