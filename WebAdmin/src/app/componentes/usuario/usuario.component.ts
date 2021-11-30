@@ -7,6 +7,8 @@ import {Usuario} from '../../modelos/usuarios';
 import { MatDialog } from '@angular/material/dialog';
 import { MatDialogConfig } from '@angular/material/dialog';
 import { UsuariomodalsComponent } from '../../modals/usuariomodals/usuariomodals.component';
+import { EditarUsuarioComponent } from 'src/app/modals/usuario/editar-usuario/editar-usuario.component';
+import { EliminarUsuarioComponent } from 'src/app/modals/usuario/eliminar-usuario/eliminar-usuario.component';
 
 @Component({
   selector: 'app-usuario',
@@ -64,8 +66,20 @@ export class UsuarioComponent implements OnInit {
     this.dialog.open(UsuariomodalsComponent,dialogConfig);
   }
 
-  editDialog(row){
-    
+  editDialog(i: number, id: number, ide_card: string, cell_phone: number, name:string, email:string, fechanac: Date, status:number, idrolusuario: number, password:string ){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(EditarUsuarioComponent,{
+      data: {id:id, ide_card:ide_card, cell_phone:cell_phone, name:name, email:email, fechanac:fechanac, status:status, idrolusuario:idrolusuario, password:password}
+    });
+  }
+
+  deleteDialog(id:number, name:string){
+    this.dialog.open(EliminarUsuarioComponent,{
+      data: {id:id, name:name}
+    })
   }
 
 }

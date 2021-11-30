@@ -30,6 +30,9 @@ import { LoginComponent } from './componentes/login/login.component';
 import { MatTableDataSource } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
+import { CrearUsuarioComponent } from './modals/usuario/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './modals/usuario/editar-usuario/editar-usuario.component';
+import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/eliminar-usuario.component';
 
 
 @NgModule({
@@ -43,6 +46,9 @@ import {MatSortModule} from '@angular/material/sort';
     EditarCombosComponent,
     SidenavComponent,
     LoginComponent,
+    CrearUsuarioComponent,
+    EditarUsuarioComponent,
+    EliminarUsuarioComponent,
 
   ],
   imports: [

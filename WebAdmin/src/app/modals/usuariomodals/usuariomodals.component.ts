@@ -49,7 +49,7 @@ export class UsuariomodalsComponent implements OnInit {
       res => {
         console.log(res);
         this.closeDialog();
-        this.router.navigate(['/sidenav/usuarios']);
+        this.refresh();
       },
       err => console.error(err)
     )
@@ -70,4 +70,8 @@ export class UsuariomodalsComponent implements OnInit {
     this.dialogRef.close();
   }
   
+  refresh(): void {
+    window.location.reload();
+  }
+
 }

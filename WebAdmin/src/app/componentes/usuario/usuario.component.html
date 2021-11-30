@@ -1,4 +1,3 @@
-
 <div class="main-table">
     
     <mat-toolbar class="table-tb">
@@ -53,10 +52,10 @@
             <button class="btn btn-primary-outline btn-sm"><mat-icon >
                 block
             </mat-icon></button>
-            <button class="btn btn-primary-outline btn-sm" [routerLink]="['/sidenav/editar-usuario', usuario.id]"><mat-icon >
+            <button class="btn btn-primary-outline btn-sm" (click)="editDialog(i, usuario.id, usuario.ide_card, usuario.cell_phone, usuario.name, usuario.email, usuario.fechanac, usuario.status, usuario.idrolusuario, usuario.password)"><mat-icon >
                 edit
             </mat-icon></button>
-            <button class="btn btn-primary-outline btn-sm" (click)="eliminarUsuario(usuario.id)"><mat-icon >
+            <button class="btn btn-primary-outline btn-sm" (click)="deleteDialog(usuario.id,usuario.name)"><mat-icon >
                 delete
             </mat-icon></button>
         </mat-cell>
