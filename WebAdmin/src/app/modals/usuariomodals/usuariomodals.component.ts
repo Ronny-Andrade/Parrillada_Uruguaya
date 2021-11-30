@@ -1,6 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {UsuarioService} from '../../services/usuario.service';
 import {Router, ActivatedRoute} from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-usuariomodals',
@@ -23,7 +24,10 @@ export class UsuariomodalsComponent implements OnInit {
 
   edit: boolean = false;
 
-  constructor(private usuarioService:UsuarioService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private usuarioService:UsuarioService, 
+    private activatedRoute: ActivatedRoute, 
+    private router: Router,
+    public dialogRef: MatDialogRef<UsuariomodalsComponent>) { }
 
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
@@ -44,6 +48,7 @@ export class UsuariomodalsComponent implements OnInit {
     this.usuarioService.saveUsuario(this.usuario).subscribe(
       res => {
         console.log(res);
+        this.closeDialog();
         this.router.navigate(['/sidenav/usuarios']);
       },
       err => console.error(err)
@@ -52,10 +57,17 @@ export class UsuariomodalsComponent implements OnInit {
 
   actualizarUsuario(){
     this.usuarioService.updateUsuario(this.usuario.id,this.usuario).subscribe(
-      res => {        
+      res => {      
+        console.log(res);
+        this.closeDialog();  
         this.router.navigate(['/sidenav/usuarios']);
       },
       err => console.error(err)
     )
   }
+
+  closeDialog(){
+    this.dialogRef.close();
+  }
+  
 }

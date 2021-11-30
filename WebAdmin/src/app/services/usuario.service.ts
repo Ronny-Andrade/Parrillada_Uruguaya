@@ -32,7 +32,7 @@ export class UsuarioService {
 
   saveUsuario(usuario:Usuario){
     return this.httpClient.post('http://localhost:8000/api/register', usuario);
-}
+  }
 
   deleteUsuario(id: string){
     return this.httpClient.delete(`http://localhost:8000/api/user-delete/${id}/`);

@@ -31,6 +31,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,9 +63,11 @@ import {MatSortModule} from '@angular/material/sort';
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
+    MatDialogModule,
 
   ],
   providers: [UsuarioService, ProductoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
