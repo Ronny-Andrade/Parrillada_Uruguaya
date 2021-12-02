@@ -10,18 +10,6 @@ import {UsuarioService} from '../../../services/usuario.service';
 })
 export class EditarUsuarioComponent implements OnInit {
 
-  usuario: any = {
-    idrolusuario: 0,
-    ide_card: '',
-    cell_phone: '',
-    name: '',
-    email: '',
-    password: '',
-    fechanac: new Date(),
-    status: 0,
-    
-  };
-
   constructor(private usuarioService:UsuarioService,
     public dialogRef:MatDialogRef<EditarUsuarioComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }

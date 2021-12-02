@@ -49,8 +49,11 @@
     <ng-container matColumnDef="opciones">
         <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
         <mat-cell *matCellDef="let usuario; let i=index;"> 
-            <button class="btn btn-primary-outline btn-sm"><mat-icon >
-                block
+            <button *ngIf="usuario.status===1" class="btn btn-primary-outline btn-sm" (click)="blockUser(usuario.id,usuario)"><mat-icon >
+                lock_outline
+            </mat-icon></button>
+            <button *ngIf="usuario.status===0" class="btn btn-primary-outline btn-sm" (click)="unblockUser(usuario.id,usuario)"><mat-icon >
+                lock_open
             </mat-icon></button>
             <button class="btn btn-primary-outline btn-sm" (click)="editDialog(i, usuario.id, usuario.ide_card, usuario.cell_phone, usuario.name, usuario.email, usuario.fechanac, usuario.status, usuario.idrolusuario, usuario.password)"><mat-icon >
                 edit

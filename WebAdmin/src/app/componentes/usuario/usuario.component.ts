@@ -9,6 +9,7 @@ import { MatDialogConfig } from '@angular/material/dialog';
 import { UsuariomodalsComponent } from '../../modals/usuariomodals/usuariomodals.component';
 import { EditarUsuarioComponent } from 'src/app/modals/usuario/editar-usuario/editar-usuario.component';
 import { EliminarUsuarioComponent } from 'src/app/modals/usuario/eliminar-usuario/eliminar-usuario.component';
+import { CrearUsuarioComponent } from 'src/app/modals/usuario/crear-usuario/crear-usuario.component';
 
 @Component({
   selector: 'app-usuario',
@@ -54,6 +55,28 @@ export class UsuarioComponent implements OnInit {
     )
   }
 
+  blockUser(id:string, usuario:any){
+    usuario.status=0;
+    this.usuarioService.updateUsuario(id,usuario).subscribe(
+      res => {      
+        console.log(res);
+        this.refresh();
+      },
+      err => console.error(err)
+    )
+  }
+
+  unblockUser(id:string, usuario:any){
+    usuario.status=1;
+    this.usuarioService.updateUsuario(id,usuario).subscribe(
+      res => {      
+        console.log(res);
+        this.refresh();
+      },
+      err => console.error(err)
+    )
+  }
+
   applyFilter(filterValue: string){
     this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
@@ -63,13 +86,10 @@ export class UsuarioComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(UsuariomodalsComponent,dialogConfig);
+    this.dialog.open(CrearUsuarioComponent,dialogConfig);
   }
 
   editDialog(i: number, id: number, ide_card: string, cell_phone: number, name:string, email:string, fechanac: Date, status:number, idrolusuario: number, password:string ){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
 
     this.dialog.open(EditarUsuarioComponent,{
       data: {id:id, ide_card:ide_card, cell_phone:cell_phone, name:name, email:email, fechanac:fechanac, status:status, idrolusuario:idrolusuario, password:password}
@@ -80,6 +100,10 @@ export class UsuarioComponent implements OnInit {
     this.dialog.open(EliminarUsuarioComponent,{
       data: {id:id, name:name}
     })
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 
 }

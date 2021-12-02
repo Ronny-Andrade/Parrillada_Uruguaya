@@ -9,27 +9,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class AppComponent {
 
-  //logica para hacer el sidebar responsive 
-  
-  @ViewChild(MatSidenav)
-    sidenav!: MatSidenav;
-
-  constructor(private observer: BreakpointObserver){
-
-  }
-
-  ngAfterViewInit(){
-    this.observer.observe(['(max-width: 800px']).subscribe((res)=>{
-      if (res.matches){
-        this.sidenav.mode='over';
-        this.sidenav.close();
-      }else{
-        this.sidenav.mode='side';
-        this.sidenav.open();
-      }
-    });
-  }
-  
 
   title = 'projectoPU';
   showFiller = false;

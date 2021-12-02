@@ -10,7 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class UsuariomodalsComponent implements OnInit {
 
-   usuario: any = {
+  usuario: any = {
     idrolusuario: 0,
     ide_card: '',
     cell_phone: '',

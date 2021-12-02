@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
@@ -7,7 +7,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
-export class SidenavComponent {
+export class SidenavComponent implements AfterViewInit, OnInit{
 
   @ViewChild(MatSidenav)
     sidenav!: MatSidenav;
@@ -17,16 +17,26 @@ export class SidenavComponent {
 
   }
 
+  ngOnInit(){
+    
+  }
+
   ngAfterViewInit(){
-    this.observer.observe(['(max-width: 800px']).subscribe((res)=>{
-      if (res.matches){
-        this.sidenav.mode='over';
-        this.sidenav.close();
-      }else{
-        this.sidenav.mode='side';
-        this.sidenav.open();
-      }
-    });
+
+    //aqui agregue el setTimeout para manejar el cambio asincronicamente y evitar el error que daba
+    setTimeout(()=>{
+      this.observer.observe(['(max-width: 800px']).subscribe((res)=>{
+        if (res.matches){
+          this.sidenav.mode='over';
+          this.sidenav.close();
+        }else{
+          this.sidenav.mode='side';
+          this.sidenav.open();
+        }
+      });
+    },0)
+    
+
   }
 
   title = 'projectoPU';

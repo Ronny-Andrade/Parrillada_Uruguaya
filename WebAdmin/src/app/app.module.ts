@@ -33,6 +33,7 @@ import {MatSortModule} from '@angular/material/sort';
 import { CrearUsuarioComponent } from './modals/usuario/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './modals/usuario/editar-usuario/editar-usuario.component';
 import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/eliminar-usuario.component';
+;
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/elim
     MatInputModule,
     MatSortModule,
     MatDialogModule,
+
 
   ],
   providers: [UsuarioService, ProductoService],
