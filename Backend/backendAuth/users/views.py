@@ -87,7 +87,7 @@ class Userid(APIView):
         return Response(serializers.data)
 
 class Userupdate(APIView):
-    def post(self, request, pk):
+    def put(self, request, pk):
         user = User.objects.get(id=pk)
         serializer = UserSerializer(instance=user, data=request.data)
         serializer.is_valid(raise_exception=True)

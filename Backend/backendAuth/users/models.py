@@ -27,7 +27,7 @@ class User(AbstractUser):
     cell_phone = models.CharField(max_length=11, blank=True, null=True)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100, unique=True)
-    password = models.CharField(max_length=45)  # Field renamed because it was a Python reserved word.
+    password = models.CharField(max_length=450)  # Field renamed because it was a Python reserved word.
     status = models.IntegerField(blank=True, null=True)
     fechanac = models.DateField(blank=True, null=True)
     username = None
