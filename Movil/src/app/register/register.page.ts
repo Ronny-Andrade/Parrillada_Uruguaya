@@ -39,6 +39,15 @@ export class RegisterPage implements OnInit {
       },
       err => console.error(err)
     )
+    this.usuario = {
+      idrolusuario: 1,
+      ide_card: '',
+      cell_phone: '',
+      name: '',
+      email: '',
+      password: '',
+      status:1
+    };
   }
 
   onClick():void {

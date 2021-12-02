@@ -32,6 +32,10 @@ export class LoginPage implements OnInit {
       },
       err => console.error(err)
     )
+    this.datainfo = {    
+      email: '',
+      password: ''
+    };
   }
 
 
