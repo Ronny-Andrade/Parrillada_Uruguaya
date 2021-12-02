@@ -42,4 +42,12 @@ usuario: any = {
       err => console.error(err)
       )
     }
+
+    actualizar(){
+      this.usuarioService.updateUsuario(this.usuario.id,this.usuario).subscribe(
+        res =>{
+          console.log(res)
+        }
+      )
+    }
 }

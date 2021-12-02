@@ -1,25 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Mi información</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header-atras titulo='Mi informacion'></app-header-atras>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <p><strong>Nombre: </strong>{{usuario.name}}</p>
-    </ion-item>
-    <ion-item>
-      <p><strong>Email: </strong>{{usuario.email}}</p>
-    </ion-item>
-    <ion-item>
-      <p><strong>Cédula: </strong>{{usuario.ide_card}}</p>
-    </ion-item>
-    <ion-item>
-      <p><strong>Teléfono: </strong>{{usuario.cell_phone}}</p>
-    </ion-item>
+  <form action="">
+    <ion-list>
+      <ion-item lines='full'>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item lines='full'>
+        <ion-label position="floating">Cedula</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.ide_card" name="cedula"></ion-input>
+      </ion-item>
     
-  </ion-list>
+      <ion-item lines='full'>
+        <ion-label position="floating">Numero de celular</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.cell_phone" name="celular" max="10" pattern="^[0-9-+]{9,10}$"></ion-input>
+      </ion-item>
+    
+      <ion-item lines='full'>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.email" name="email" disabled="true" ></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit" expand="block" (click)="actualizar()" >Actualizar</ion-button>
+
+  </form>
   <ion-button type="submit" expand="block" (click)="logout()" >Cerrar sesión</ion-button>
 
 </ion-content>

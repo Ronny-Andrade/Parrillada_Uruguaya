@@ -12,6 +12,10 @@ import { UsuarioService } from '../services/usuario.service';
 })
 export class RegisterPage implements OnInit {
 
+
+  showPassword = false;
+  passwordIcon = 'eye-off';
+
   usuario: any = {
     idrolusuario: 1,
     ide_card: '',
@@ -35,6 +39,15 @@ export class RegisterPage implements OnInit {
       },
       err => console.error(err)
     )
+  }
+
+  onClick():void {
+    this.showPassword = !this.showPassword;
+    if(this.passwordIcon == 'eye-off'){
+      this.passwordIcon = 'eye';
+    }else{
+      this.passwordIcon = 'eye-off';
+    }
   }
 
 }

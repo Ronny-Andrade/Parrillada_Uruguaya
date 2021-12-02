@@ -1,0 +1,35 @@
+<app-header-atras titulo='Menu'></app-header-atras>
+
+<ion-content>
+    <div>
+        <ion-card>
+            <ion-card-header>
+                <ion-img src='{{datos[1]}}'></ion-img>
+                <ion-card-title>{{datos[0]}}</ion-card-title>
+                <ion-card-subtitle>{{datos[3]}}</ion-card-subtitle>
+                <ion-card-subtitle>${{datos[2]}}</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </div>
+
+    <section class="suma">
+        <ion-button (click)="suma()">
+            <ion-icon name="add-outline"></ion-icon>
+        </ion-button>
+    </section>
+    
+
+    <section class="resta">
+        <ion-button (click)="resta()">
+            <ion-icon name="remove-outline"></ion-icon>
+        </ion-button>
+    </section>
+    
+    <h3>{{acumulador}}</h3>
+
+
+    <section class="full-width">
+        <ion-button expand="full" strong="end">Agregar {{acumulador}} al carrito ${{final}}</ion-button>
+    </section>
+
+</ion-content>

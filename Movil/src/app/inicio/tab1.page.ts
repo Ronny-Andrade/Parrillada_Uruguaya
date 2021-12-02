@@ -21,4 +21,5 @@ export class Tab1Page implements OnInit {
     slidesPerView: 1,
     autoplay:true
   };
+
 }

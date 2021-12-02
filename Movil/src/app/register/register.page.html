@@ -9,26 +9,38 @@
 </ion-header>
 
 <ion-content>
-<form>
+<form #formulario='ngForm'>
+  
+  <ion-list-header>
+    <ion-label>Registro valido: {{formulario.valid}}</ion-label>
+  </ion-list-header>
 
   <ion-item lines='full'>
     <ion-label position="floating">Nombre</ion-label>
-    <ion-input type="text" [(ngModel)]="usuario.name" name="name"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.name" name="name" required></ion-input>
+  </ion-item>
+
+
+  <ion-item lines='full'>
+    <ion-label position="floating">Numero de celular</ion-label>
+    <ion-input type="number" [(ngModel)]="usuario.cell_phone" name="celular" pattern="^[0-9-+]{9,10}$" required></ion-input>
   </ion-item>
 
   <ion-item lines='full'>
     <ion-label position="floating">Email</ion-label>
-    <ion-input type="text" [(ngModel)]="usuario.email" name="email" ></ion-input>
+    <ion-input type="email" [(ngModel)]="usuario.email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
   </ion-item>
 
   <ion-item lines='full'>
     <ion-label position="floating">Password</ion-label>
-    <ion-input type="password" [(ngModel)]="usuario.password" name="password"></ion-input>
+    <ion-input [type] ="showPassword ? 'text' : 'password' " [(ngModel)]="usuario.password" name="password" required></ion-input>
+    <ion-icon slot="end" [name]="passwordIcon" (click)="onClick()"></ion-icon>
   </ion-item>
+
 
   <ion-row class="">
     <ion-col class="">
-      <ion-button type="submit" (click)="onRegister()" expand="block">
+      <ion-button type="submit" (click)="onRegister()" expand="block" [disabled]='formulario.invalid'>
         Aceptar
       </ion-button>
     </ion-col>

@@ -1,0 +1,105 @@
+<ion-header>
+  <!--Toolbar-->
+  <app-header-atras titulo='Menu'></app-header-atras>
+  <!--Segment-->
+  
+    <ion-segment (ionChange)="segmentChanged($event)" [value] = "valueSelected">
+        <ion-segment-button value="1">
+            <ion-label>Principal</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="2">
+            <ion-label>Adicionales</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="3">
+            <ion-label>Bebidas</ion-label>
+        </ion-segment-button>
+
+    </ion-segment>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  
+
+<div class="contenedor" id="principal">
+  <!--Buscador-->
+  <div class="contenedor" id="buscador">
+      <ion-searchbar 
+      placeholder="Buscar plato"
+      inputmode="text"
+      animated
+      (ionChange)='buscar( $event )'
+      [debounce]='250'
+      ></ion-searchbar>
+  </div> 
+  
+
+  <!--Menu-->
+  <div *ngIf="valueSelected == 1">
+
+    <div 
+      class="contendor" 
+      id="menu"
+      *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' ">
+          <ion-card [routerLink]="['/infomenu',principal.nombre,principal.imagen,principal.precio,principal.descripcion]" *ngIf="principal.idtipoproducto == 1">
+              <ion-card-header>
+                  <img class="cardImagen" src='{{principal.imagen}}'>
+                  <ion-card-title>{{principal.nombre}}</ion-card-title>
+                  <ion-card-subtitle>{{principal.descripcion}}</ion-card-subtitle>
+                  <ion-card-subtitle>${{principal.precio}}</ion-card-subtitle>
+              </ion-card-header>
+          </ion-card>
+    </div>
+
+  </div>
+
+
+  <div *ngIf="valueSelected == 2">
+
+      <div class="contendor" 
+          id="menu"
+          *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' ">
+              <ion-card  [routerLink]="['/infomenu',principal.nombre,principal.imagen,principal.precio,principal.descripcion]" *ngIf="principal.idtipoproducto == 2">
+                  <ion-card-header>
+                      <img  class="cardImagen" src='{{principal.imagen}}'>
+                      <ion-card-title>{{principal.nombre}}</ion-card-title>
+                      <ion-card-subtitle>{{principal.descripcion}}</ion-card-subtitle>
+                      <ion-card-subtitle>${{principal.precio}}</ion-card-subtitle>
+                  </ion-card-header>
+              </ion-card>
+      </div>
+
+  </div>
+
+
+  <div *ngIf="valueSelected == 3">
+
+        <div class="contendor" 
+          id="menu"
+          *ngFor="let principal of alimentos | async | filtro:textoBuscar:'nombre' ">
+              <ion-card  [routerLink]="['/infomenu',principal.nombre,principal.imagen,principal.precio,principal.descripcion]" *ngIf="principal.idtipoproducto == 3">
+                  <ion-card-header>
+                      <img  class="cardImagen" src='{{principal.imagen}}'>
+                      <ion-card-title>{{principal.nombre}}</ion-card-title>
+                      <ion-card-subtitle>{{principal.descripcion}}</ion-card-subtitle>
+                      <ion-card-subtitle>${{principal.precio}}</ion-card-subtitle>
+                  </ion-card-header>
+              </ion-card>
+      </div>
+
+  </div>
+
+
+
+  
+  
+</div>
+<ion-fab vertical="top" horizontal="end" slot="fixed">
+  <ion-fab-button>
+      <ion-icon name="cart"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

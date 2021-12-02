@@ -28,4 +28,8 @@ export class UsuarioService {
       return this.http.post('http://localhost:8000/api/logout',{}, {withCredentials: true});
   }
 
+  updateUsuario(id: string|number , updatedUsuario: Usuario){
+    return this.http.put(`http://localhost:8000/api/user-update/${id}/`,updatedUsuario);
+  }
+
 }

@@ -17,6 +17,10 @@ export class LoginPage implements OnInit {
 
   constructor(private router:Router, private usuarioService: UsuarioService) { }
 
+  showPassword = false;
+  passwordIcon = 'eye-off';
+
+
   ngOnInit() {
   }
 
@@ -34,5 +38,14 @@ export class LoginPage implements OnInit {
 
   private redirectUser(isVerified: boolean) {
     
+  }
+
+  onClick():void {
+    this.showPassword = !this.showPassword;
+    if(this.passwordIcon == 'eye-off'){
+      this.passwordIcon = 'eye';
+    }else{
+      this.passwordIcon = 'eye-off';
+    }
   }
 }
