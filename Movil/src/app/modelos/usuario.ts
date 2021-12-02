@@ -3,7 +3,8 @@ export interface Usuario{
     idrolusuario: number;
     ide_card: string;
     cell_phone: string;
-    name: string;    
+    name: string;
+    lastname: string;  
     email: string;    
     password: string;
     status: number;

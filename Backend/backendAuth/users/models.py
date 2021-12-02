@@ -26,6 +26,7 @@ class User(AbstractUser):
     ide_card = models.CharField(max_length=45, blank=True, null=True)
     cell_phone = models.CharField(max_length=11, blank=True, null=True)
     name = models.CharField(max_length=100)
+    lastname = models.CharField(max_length=100, blank=True, null=True)
     email = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=450)  # Field renamed because it was a Python reserved word.
     status = models.IntegerField(blank=True, null=True)

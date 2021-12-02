@@ -21,6 +21,7 @@ export class RegisterPage implements OnInit {
     ide_card: '',
     cell_phone: '',
     name: '',
+    lastname:'',
     email: '',
     password: '',
     status:1
@@ -44,6 +45,7 @@ export class RegisterPage implements OnInit {
       ide_card: '',
       cell_phone: '',
       name: '',
+      lastname:'',
       email: '',
       password: '',
       status:1

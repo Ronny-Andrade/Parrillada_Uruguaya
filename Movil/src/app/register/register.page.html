@@ -16,8 +16,13 @@
   </ion-list-header>
 
   <ion-item lines='full'>
-    <ion-label position="floating">Nombre</ion-label>
+    <ion-label position="floating">Nombres</ion-label>
     <ion-input type="text" [(ngModel)]="usuario.name" name="name" required></ion-input>
+  </ion-item>
+
+  <ion-item lines='full'>
+    <ion-label position="floating">Apellidos</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.lastname" name="lastname" required></ion-input>
   </ion-item>
 
 

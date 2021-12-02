@@ -16,6 +16,7 @@ usuario: any = {
     ide_card: '',
     cell_phone: '',
     name: '',
+    lastname: '',
     email: '',
     password: '',
     status:1
