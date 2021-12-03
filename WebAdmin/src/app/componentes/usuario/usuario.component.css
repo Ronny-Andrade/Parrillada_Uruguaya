@@ -2,7 +2,7 @@
     flex: 1 1 auto;
   }
 
-  mat-icon {
+mat-icon {
     vertical-align: middle;
     margin-right: 2px;
 }
@@ -11,10 +11,19 @@
   vertical-align: middle;
 }
 
-.main-table{
+.main-container{
+  
   width: calc(100vw - 350px);
   height: calc(100vh - 150px);
-  overflow:auto;
+  
+}
+
+.main-table{
+
+  border-radius:10px;
+  width: calc(100vw - 350px);
+  height: calc(100vh - 220px);
+  
 }
 
 .table-tb{
@@ -49,10 +58,59 @@ mat-form-field {
 }
 
 .mat-column-opciones{
-  flex: 0 0 10%;
+  flex: 0 0 15%;
 }
 
 .mat-column-rol{
   flex: 0 0 10%;
 }
 
+@media (max-width: 800px){
+  
+  .main-table {
+      height: calc(100vh - 225px);
+      width: 299px;
+      justify-content: left;
+      align-items: top;
+      overflow:auto;
+  }
+
+  .table-tb span{
+    display:none;
+  }
+
+  .table-search{
+    width:275px;
+  }
+
+  .mat-column-name{
+    flex: 0 0 300px;
+  }
+  
+  .mat-column-ide_card{
+    flex: 0 0 100px;
+  }
+  
+  .mat-column-mail{
+    flex: 0 0 200px;
+  }
+  
+  .mat-column-cell_phone{
+    flex: 0 0 100px;
+  }
+  
+  .mat-column-fechanac{
+    flex: 0 0 100px;
+  }
+  
+  .mat-column-rol{
+    flex: 0 0 0%;
+  }
+
+  .mat-column-opciones{
+    flex: 0 0 150px;
+  }
+
+  
+
+}

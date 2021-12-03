@@ -11,34 +11,34 @@ export class UsuarioService {
 
    }
    getData(){
-    return this.httpClient.get('http://localhost:8000/api/list');
+    return this.httpClient.get('https://parrilladauru.pythonanywhere.com/api/list');
   }
 
   loginUsuario(usuario:any){
-    return this.httpClient.post('http://localhost:8000/api/login',usuario, {withCredentials: true});
+    return this.httpClient.post('https://parrilladauru.pythonanywhere.com/api/login',usuario, {withCredentials: true});
   }
 
   getUsuarioLogeado(){
-  return this.httpClient.get('http://localhost:8000/api/user', {withCredentials: true});
+  return this.httpClient.get('https://parrilladauru.pythonanywhere.com/api/user', {withCredentials: true});
   }
 
   logoutUsuario(){
-    return this.httpClient.post('http://localhost:8000/api/logout',{}, {withCredentials: true});
+    return this.httpClient.post('https://parrilladauru.pythonanywhere.com/api/logout',{}, {withCredentials: true});
   }
 
   getdatabyId(id: string){
-    return this.httpClient.get(`http://localhost:8000/api/user-detail/${id}/`);
+    return this.httpClient.get(`https://parrilladauru.pythonanywhere.com/api/user-detail/${id}/`);
   }
 
   saveUsuario(usuario:Usuario){
-    return this.httpClient.post('http://localhost:8000/api/register', usuario);
+    return this.httpClient.post('https://parrilladauru.pythonanywhere.com/api/register', usuario);
   }
 
   deleteUsuario(id: string){
-    return this.httpClient.delete(`http://localhost:8000/api/user-delete/${id}/`);
+    return this.httpClient.delete(`https://parrilladauru.pythonanywhere.com/api/user-delete/${id}/`);
   }
   
   updateUsuario(id: string|number , updatedUsuario: Usuario){
-    return this.httpClient.put(`http://localhost:8000/api/user-update/${id}/`,updatedUsuario);
+    return this.httpClient.put(`https://parrilladauru.pythonanywhere.com/api/user-update/${id}/`,updatedUsuario);
   }
 }

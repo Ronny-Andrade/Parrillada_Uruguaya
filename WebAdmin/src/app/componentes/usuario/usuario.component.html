@@ -1,4 +1,4 @@
-<div class="main-table">
+<div class="main-container">
     
     <mat-toolbar class="table-tb">
         <span>Listado de usuarios</span>
@@ -13,17 +13,17 @@
         </button>
     </mat-toolbar>
 
-    <mat-form-field >
+    <mat-form-field class="table-search">
         <input (keyup)="applyFilter($event.target.value)" class="filter" matInput/>
         <mat-placeholder>Buscar</mat-placeholder>
         <mat-icon matSuffix style="font-size: 1.2em">search</mat-icon>
     </mat-form-field>
     
-<table mat-table [dataSource]="dataSource" matSort class="main-table mat-elevation-z8"  >
+<mat-table [dataSource]="dataSource" matSort class="main-table mat-elevation-z8"  >
 
     <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </mat-header-cell>
-        <mat-cell *matCellDef="let usuario"> {{usuario.name}} </mat-cell>
+        <mat-cell *matCellDef="let usuario"> {{usuario.name}} {{usuario.lastname}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
@@ -78,5 +78,5 @@
 
     <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true" ></mat-header-row>
     <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
-</table>
+</mat-table>
 </div>
