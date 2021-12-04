@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../services/usuario.service';
 import { User } from '../shared/user.interface';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-perfil',
@@ -19,10 +21,14 @@ usuario: any = {
     lastname: '',
     email: '',
     password: '',
+    fechanac: '',
     status:1
   };
 
-  constructor(private router:Router, private usuarioService: UsuarioService) { }
+  constructor(
+    private router:Router, 
+    private usuarioService: UsuarioService,
+    public alertController: AlertController) { }
 
   ngOnInit() {
     this.usuarioService.getUsuarioLogeado().subscribe(
@@ -34,9 +40,11 @@ usuario: any = {
       )  
   }
   logout(){
+
     this.usuarioService.logoutUsuario().subscribe(
       () => {
         console.log("Usuario ha hecho logout correctamente");
+
         this.router.navigate(['login']);
         
       },
@@ -50,5 +58,23 @@ usuario: any = {
           console.log(res)
         }
       )
+      this.presentAlert();
     }
+
+    async presentAlert() {
+      const alert = await this.alertController.create({
+        //cssClass: 'my-custom-class',
+        header: 'Actualizado',
+        subHeader: 'Cambios guardados',
+        //message: 'This is an alert message.',
+        //buttons: ['OK']
+      });
+  
+      await alert.present();
+  
+      const { role } = await alert.onDidDismiss();
+      console.log('onDidDismiss resolved with role', role);
+    }
+  
+
 }

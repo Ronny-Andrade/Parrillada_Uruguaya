@@ -7,6 +7,7 @@ export interface Usuario{
     lastname: string;  
     email: string;    
     password: string;
+    fechanac: string;
     status: number;
     
 }

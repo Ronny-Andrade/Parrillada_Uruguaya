@@ -17,14 +17,18 @@
 
   <ion-item lines='full'>
     <ion-label position="floating">Nombres</ion-label>
-    <ion-input type="text" [(ngModel)]="usuario.name" name="name" required></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.name" name="name" maxlength="25" required></ion-input>
   </ion-item>
 
   <ion-item lines='full'>
     <ion-label position="floating">Apellidos</ion-label>
-    <ion-input type="text" [(ngModel)]="usuario.lastname" name="lastname" required></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.lastname" name="lastname" maxlength="25" required></ion-input>
   </ion-item>
 
+  <ion-item lines='full'>
+    <ion-label position="stacked">Fecha de nacimiento</ion-label>
+    <ion-input type="date" [(ngModel)]="usuario.fechanac" name="fechanac" required></ion-input>
+  </ion-item>
 
   <ion-item lines='full'>
     <ion-label position="floating">Numero de celular</ion-label>

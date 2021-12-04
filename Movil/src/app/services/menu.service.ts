@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
 })
 export class MenuService {
 
-  API= 'https://ricardovilcacundo.pythonanywhere.com/pro/productos/'
+  API= 'https://parrilladauru.pythonanywhere.com/api/productos/'
   
   constructor(private http: HttpClient) { }
 
@@ -17,12 +17,12 @@ export class MenuService {
   }
   
   getTipoProducto(){
-    return this.http.get('https://ricardovilcacundo.pythonanywhere.com/tipro/tipoproductos/')
+    return this.http.get('https://parrilladauru.pythonanywhere.com/api/tipoproductos/')
     .pipe(tap(console.log)); 
   }
 
   getProductoById(id: string){
-    return this.http.get(`https://ricardovilcacundo.pythonanywhere.com/pro/productos/${id}/`)
+    return this.http.get(`https://parrilladauru.pythonanywhere.com/api/productos/${id}/`)
     .pipe(tap(console.log)); 
   }
 
