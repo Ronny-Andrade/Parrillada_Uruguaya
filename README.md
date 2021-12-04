@@ -10,3 +10,5 @@ Integrantes:
 FINALIZADO 
 
 Hu04: Login y registro
+Hu05: Editar perfil de usuario
+
