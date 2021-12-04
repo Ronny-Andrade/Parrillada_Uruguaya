@@ -14,3 +14,4 @@ Hu05: Editar perfil de usuario
 Hu06: Seleccionar plato
 Hu01: Privilegio de usuario
 Hu02: Administrar usuarios
+Hu03: Enlistar y buscar usuarios
