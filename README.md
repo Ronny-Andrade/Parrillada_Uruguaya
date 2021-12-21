@@ -23,5 +23,5 @@ Hu08: Administrar cupones
 Hu09: Funcionamiento de cupones
 Hu10: Crud de las ofertas
 Hu11: Configurar ofertas 
-
+Hu12: Crud de los adicionales
 
