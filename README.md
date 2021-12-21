@@ -9,6 +9,7 @@ Integrantes:
 
 FINALIZADO 
 
+Sprint 1
 Hu01: Privilegio de usuario
 Hu02: Administrar usuarios
 Hu03: Enlistar y buscar usuarios
@@ -16,6 +17,7 @@ Hu04: Login y registro
 Hu05: Editar perfil de usuario
 Hu06: Seleccionar plato
 
-
-Hu011: Configurar ofertas 
+Sprint2
+Hu10: Crud de las ofertas
+Hu11: Configurar ofertas 
 
