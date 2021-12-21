@@ -18,6 +18,7 @@ Hu05: Editar perfil de usuario
 Hu06: Seleccionar plato
 
 Sprint2
+Hu07: Crud de los combos
 Hu08: Administrar cupones
 Hu09: Funcionamiento de cupones
 Hu10: Crud de las ofertas
