@@ -19,6 +19,7 @@ Hu06: Seleccionar plato
 
 Sprint2
 Hu08: Administrar cupones
+Hu09: Funcionamiento de cupones
 Hu10: Crud de las ofertas
 Hu11: Configurar ofertas 
 
