@@ -1,0 +1,57 @@
+.jefe{
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
+    height: 32%;;
+}
+.pri{
+    background-color: #222428;
+    box-shadow: 0 0 0.25cm #000;
+    width: 100%;
+    border-radius: 7px;
+    padding-bottom:0px;
+       
+    display: flex;
+    position: relative;
+
+}
+
+.cardImagen {
+    display: block;
+    border-radius: 7px;
+    width: 100%;
+    height: 150px;
+
+}
+.a{
+    flex: 0 0 50%;
+    position: relative;
+}
+.b {
+    flex: 1;
+    padding: 5px 5px 5px 15px;
+    width:100%;
+    
+}
+.card-nombre{
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    
+    
+}
+.card-descripcion{
+    font-size: 9px;
+    font-weight: 300;
+    margin-bottom: 8px;
+
+    
+ 
+}
+.card-precio{
+    font-size: 12.5px;
+    font-weight: 400;
+}
+

@@ -26,4 +26,8 @@ export class MenuService {
     .pipe(tap(console.log)); 
   }
 
+  getProductoCliente(){
+    return this.http.get('https://parrilladauru.pythonanywhere.com/api/productocliente/')
+    .pipe(tap(console.log));
+  }
 }

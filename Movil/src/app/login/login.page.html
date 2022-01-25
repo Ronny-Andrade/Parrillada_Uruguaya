@@ -1,20 +1,20 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary"> 
     <ion-title>Login</ion-title>
   </ion-toolbar>
   
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-class">
   <div class="contenedor" id="principal">
     <form #formulario='ngForm'>
       <ion-item>
-        <img src="https://jardinesplaza.com.ec/wp-content/uploads/2020/11/Rou-jardines-plaza-via-samborondon-comida-area-medica-cafeteria-1024x1024.png">
+        <img src="https://images.vexels.com/media/users/3/212776/isolated/preview/862f53e1c41e52321179b4ec18a3debd-llama-parrilla-simbolo-plano-gris-amarillo.png">
       </ion-item>
       <ion-item lines='full'>
         <ion-label position="floating">Email</ion-label>
         <ion-input type="text" [(ngModel)]="datainfo.email" name="email"
-        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
+        pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required ></ion-input>
       </ion-item>
     
       <ion-item lines='full'>
@@ -25,7 +25,7 @@
     
       <ion-row class="">
         <ion-col class="">
-          <ion-button type="submit" (click)="onLogin()" expand="block" color="success" [disabled]='formulario.invalid'>
+          <ion-button type="submit" (click)="onLogin()" expand="block" color="light" [disabled]='formulario.invalid'>
             Aceptar
           </ion-button>
         </ion-col>
@@ -33,26 +33,29 @@
     
     </form>
 
-    <ion-row>
-      <ion-col>
-        <p> ¿Olvidaste tu contraseña?<a routerLink="/forgot-password"> Recuperar contraseña</a>
-        </p>
-      </ion-col>
-    </ion-row>
-
-  </div>
+    <div class="cuenta"> 
+      <ion-row>
+        <ion-col >
+          <p class="cuenta"> ¿Olvidaste tu contraseña?<a routerLink="/forgot-password"> Recuperar contraseña</a>
+          </p>
+        </ion-col>
+      </ion-row>
   
-  <div>
-    <p>¿Aun no tienes una cuenta? <a class="vinculoLogin" routerLink='/register'>Registrate ahora</a></p>
-      <hr class="separacion">
-      
-  </div>
-  
-  <div>
-    <p><a class="vinculoLogin" routerLink='/'>Ingrese como invitado</a></p>
-      <hr class="separacion">
-      
-  </div>
+    </div>
+    
+    <div>
+      <p class="cuenta">¿Aun no tienes una cuenta? <a class="vinculoLogin" routerLink='/register'>Registrate ahora</a></p>
+        <hr class="separacion">
+        
+    </div>
+    
+    <div>
+      <p class="cuenta"><a class="vinculoLogin" routerLink='/'>Ingrese como invitado</a></p>
+        <hr class="separacion">
+        
+    </div>
+    </div>
+    
 
     
 

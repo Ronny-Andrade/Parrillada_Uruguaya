@@ -1,5 +1,12 @@
+.bg-class{
+    --background: linear-gradient(to top, rgb(238, 6, 6) 0%, rgb(0, 0, 0) 10%) !important;
+  }
 img{
     display:block;
     margin:auto;
     max-width: 50%;
+}
+
+.cuenta{
+  text-align: center;
 }

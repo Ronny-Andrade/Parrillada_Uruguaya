@@ -1,0 +1,26 @@
+.nombre{
+    padding-left: 10px;
+}
+.btns{
+    text-align: center;
+    height: 1px;
+}
+.descripcion, .precio{
+    font-size: small;
+    padding-left: 15px;
+}
+
+.container{
+    color: #222428;
+}
+
+.parent {
+    position: relative;
+
+}
+
+.child {
+    position: fixed;
+    bottom: 50px;
+    right: 45px;
+}

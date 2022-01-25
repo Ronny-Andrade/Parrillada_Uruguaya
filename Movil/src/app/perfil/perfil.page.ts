@@ -35,6 +35,7 @@ usuario: any = {
       res => {
         console.log(res);
         this.usuario = res;
+        console.log(this.usuario.id)
       },
       err => console.error(err)
       )  

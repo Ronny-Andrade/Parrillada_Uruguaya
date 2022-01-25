@@ -1,0 +1,21 @@
+<ion-header>
+  <app-header-atras titulo='Ofertas'></app-header-atras>
+</ion-header>
+
+<ion-content>
+  <div class= "jefe" 
+    *ngFor="let oferta of ofertas">
+        <div class="pri">
+            <div class="a">
+                <img class="cardImagen" src='{{oferta.imagen}}'>
+            </div>
+            <div class="b">
+                <h5 class="card-nombre" id="lo"><b>{{oferta.nombre}}</b></h5>
+                <p class="card-descripcion">{{oferta.descripcion}}</p>
+                <h6 class="card-precio"><b>Descuento: {{oferta.descuento}}%</b></h6>
+            </div>  
+            
+        </div>
+        
+    </div>
+</ion-content>

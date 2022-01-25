@@ -31,9 +31,15 @@ const routes: Routes = [
     loadChildren: () => import('./infousuario/infousuario.module').then( m => m.InfousuarioPageModule)
   },
   {
-    path: 'infomenu/:nombre/:imagen/:precio/:descripcion',
+    path: 'infomenu/:idproducto',
     loadChildren: () => import('./infomenu/infomenu.module').then( m => m.InfomenuPageModule)
-  }
+  },
+  {
+    path: 'consumidos',
+    loadChildren: () => import('./consumidos/consumidos.module').then( m => m.ConsumidosPageModule)
+  },
+
+
 
 ];
 @NgModule({

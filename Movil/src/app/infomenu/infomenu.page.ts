@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-infomenu',
@@ -8,9 +9,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class InfomenuPage implements OnInit {
 
-
+  st = "holamunfo";
   variable:any;
   datos = new Array();
+  producto:any;
+  nombre:string;
+  descripcion:string;
+  precio:number;
+  img:string;
+  tipo:string;
+  adicionales=[];
+  bebidas=[];
+  valoresAdicional = [];
+  valoresBebida = [];
+  precioAdiconal:number;
+  contadorAdicional:number = 0;
+
+
+
 
   //Variables para agregar o restar productos
   unitario:number;
@@ -18,37 +34,111 @@ export class InfomenuPage implements OnInit {
   acumulador:number =1;
 
   constructor(
-    private activatedRoute:ActivatedRoute) { }
+    private activatedRoute:ActivatedRoute,
+    private menu:MenuService) { }
 
   ngOnInit() {
-    this.variable = this.activatedRoute.snapshot.paramMap.get("nombre");
-    this.datos.push(this.variable);
+    this.menu.getProductoById(this.activatedRoute.snapshot.paramMap.get("idproducto")).subscribe(data =>{
+      this.nombre = data.nombre;
+      this.descripcion = data.descripcion;
+      this.precio = data.precio;
+      this.img = data.imagen;
+           
+      console.log(this.producto);
+      this.final = this.precio;
 
-    this.variable = this.activatedRoute.snapshot.paramMap.get("imagen");
-    this.datos.push(this.variable);
+    });
 
-    this.variable = this.activatedRoute.snapshot.paramMap.get("precio");
-    this.datos.push(this.variable);
+    this.agregarAdi();
+    this.agregarBebi();
+  }
 
-    this.variable = this.activatedRoute.snapshot.paramMap.get("descripcion");
-    this.datos.push(this.variable);
+  recortar(text:any, limit:any): string{
+    if (text.length > limit){
+      for (let i = limit; i > 0; i--){
+          if(text.charAt(i) === ' ' && (text.charAt(i-1) != ','||text.charAt(i-1) != '.'||text.charAt(i-1) != ';')) {
+              return text.substring(0, i) + '...';
+          }
+      }
+       return text.substring(0, limit) + '...';
+  }
+  else
+      return text;
+  }
 
-    this.final = this.datos[2];
+  agregarAdi(){
+    this.menu.getMenu().subscribe(data =>{
+      for (const [key, value] of Object.entries(data)) {
+        if(value["idtipoproducto"] === 2){
+          value["nombre"] = this.recortar(value["nombre"], 30);
+          value["descripcion"] = this.recortar(value["descripcion"], 32);  
+          this.adicionales.push(value);
+        }  
+      }
+    });
+  }
+
+  agregarBebi(){
+    this.menu.getMenu().subscribe(data =>{
+      for (const [key, value] of Object.entries(data)) {
+        if(value["idtipoproducto"] === 3){
+          value["nombre"] = this.recortar(value["nombre"], 30);
+          value["descripcion"] = this.recortar(value["descripcion"], 32);  
+          this.bebidas.push(value);
+        }  
+      }
+    });
   }
 
   suma(){
     console.log('Suma')
-    this.unitario = this.datos[2];
-    this.final= Number(this.final) + Number(this.unitario);
+    this.unitario = this.precio;
+    this.final= this.final + this.unitario;
     this.acumulador = this.acumulador + 1;
   
   }
 
   resta(){
-    if(this.final > this.datos[2]){
-      this.unitario = this.datos[2];
-      this.final= Number(this.final) - Number(this.unitario);
+    if(this.final > this.precio){
+      this.unitario = this.precio;
+      this.final= this.final - this.unitario;
       this.acumulador = this.acumulador - 1;
+    }
+  }
+
+  onClickAdicional( adicional:any ){
+
+    
+    if(this.valoresAdicional.includes(adicional)) {
+      this.valoresAdicional = this.valoresAdicional.filter((value)=>value!=adicional);
+
+    } else {
+      this.valoresAdicional.push(adicional)
+    }
+
+    
+    
+    if(this.valoresAdicional.indexOf(adicional) > -1){
+      this.final = this.final + this.valoresAdicional[this.valoresAdicional.indexOf(adicional)]
+    }else{
+      this.final = this.final - adicional
+    }
+  }
+
+  onClickBebida(bebi:any){
+    if(this.valoresAdicional.includes(bebi)) {
+      this.valoresAdicional = this.valoresAdicional.filter((value)=>value!=bebi);
+
+    } else {
+      this.valoresAdicional.push(bebi)
+    }
+
+    
+    
+    if(this.valoresAdicional.indexOf(bebi) > -1){
+      this.final = this.final + this.valoresAdicional[this.valoresAdicional.indexOf(bebi)]
+    }else{
+      this.final = this.final - bebi
     }
   }
 

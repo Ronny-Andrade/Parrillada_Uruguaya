@@ -14,6 +14,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore'
 import {environment} from '../environments/environment';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

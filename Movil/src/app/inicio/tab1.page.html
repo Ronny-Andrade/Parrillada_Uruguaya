@@ -1,31 +1,77 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color ="primary">
     <ion-title>
       Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="bg">
+  
+  <ion-slides mode="ios" pager="ios" [options]="slideOptsOne" class="padre">
+    <ion-slide class="hi" *ngFor="let o of ofertas | async">
+      <ion-card class="hola">
+        <img class="imagenbanner" src='{{o.imagen}}'>
+      </ion-card>
+                        
+    </ion-slide>
+</ion-slides>
+
+    <ion-grid class="ge">
+      <ion-row class="pa">
+        <ion-col class="ge1">
+          
+            <ion-card class="m1" routerLink="/tabs/tab2">
+              <ion-card-header class="ojo">
+                <ion-card-title>Menú</ion-card-title>                  
+              </ion-card-header>
+              <ion-card-content>
+                <img class="imagen" src="https://w7.pngwing.com/pngs/159/757/png-transparent-black-charcoal-grill-with-flame-illustration-barbecue-grill-doner-kebab-hamburger-gyro-grill-food-beef-steak-thumbnail.png">
+              </ion-card-content>
+            </ion-card>
+            
+            <ion-card color ="primary" class="m2" routerLink="/tabs/tab2">
+              <ion-card-header class="ojo">
+                <ion-card-title>Cupones</ion-card-title>                  
+              </ion-card-header>
+              <ion-card-content>
+                <img class="imagen" src="https://cdn.pagomex.com/src/portal/assets/img/slider/siprel-cupones-promo.png">
+              </ion-card-content>
+            </ion-card>
+          
+        </ion-col>
+        <ion-col class="ge2">
+          <ion-card class="m3" routerLink="/tabs/tab2">
+            <ion-card-header class="ojo">
+              <ion-card-title>Combos</ion-card-title>                  
+            </ion-card-header>
+            <ion-card-content class="ojo2">
+              <img class="imagen2" src="https://cdn.pagomex.com/src/portal/assets/img/slider/siprel-cupones-promo.png">
+            </ion-card-content>
+          </ion-card>
+
+         <ion-card color ="primary" class="m4" routerLink="/tabs/ofertas">
+              <ion-card-header class="ojo">
+                <ion-card-title>Ofertas</ion-card-title>                  
+              </ion-card-header>
+              <ion-card-content>
+                <img class="imagen3" src="https://cdn.pagomex.com/src/portal/assets/img/slider/siprel-cupones-promo.png">
+              </ion-card-content>
+            </ion-card>
+
+          <ion-card class="m5" routerLink="/tabs/tab2">
+              <ion-card-header class="ojo">
+                <ion-card-title>Favoritos</ion-card-title>                  
+              </ion-card-header>
+              <ion-card-content class="ojo2">
+                <img class="imagen2" src="https://cdn.pagomex.com/src/portal/assets/img/slider/siprel-cupones-promo.png">
+              </ion-card-content>
+            </ion-card>
+        </ion-col>
+        
+      </ion-row>
     
-  <div class="contenedor">
-      <div class="contenedor" id="slides">
-          <ion-slides mode="ios" pager="ios" [options]="slideOptsOne" >
-              <ion-slide *ngFor="let o of ofertas | async">
-                  <img class="imagen" style="height: 350px;" src='{{o.imagen}}'>                
-              </ion-slide>
-          </ion-slides>
-      </div>
-  </div>
-  <ion-label><b>Menú</b></ion-label>
-  <ion-card routerLink="/tabs/tab2">
-      <img class="imagen" src="https://cdn.kiwilimon.com/articuloimagen/30103/28193.jpg">
-  </ion-card>
+    </ion-grid>
   
-  <ion-label><b>Cupones(No funcional)</b></ion-label>
-  <ion-card>
-      <img class="imagen" src="https://marketing4ecommerce.net/wp-content/uploads/2018/02/cupones-descuento.jpg">
-  </ion-card>
-  
-  </ion-content>
+</ion-content>
 

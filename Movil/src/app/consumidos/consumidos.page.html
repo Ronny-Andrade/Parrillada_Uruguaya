@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color ="primary">
+    <ion-title>
+      Platos más consumidos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class= "jefe" 
+    *ngFor="let producto of listagetproductos">
+        <div class="pri" [routerLink]="['/infomenu',producto.idproducto]">
+            <div class="a">
+                <img class="cardImagen" src='{{producto.imagen}}'>
+            </div>
+            <div class="b">
+                <h5 class="card-nombre" id="lo"><b>{{producto.nombre}}</b></h5>
+                <p class="card-descripcion">{{producto.descripcion}}</p>
+                <p class="card-precio"><b>${{producto.precio}}</b></p>
+            </div>  
+            
+        </div>
+        
+    </div>
+
+</ion-content>
