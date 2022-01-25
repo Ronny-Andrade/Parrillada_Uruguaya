@@ -9,25 +9,26 @@ import {Producto} from '../modelos/productos';
 export class ProductoService {
 
   constructor(private http: HttpClient) { }
+  url: string = "https://parrilladauru.pythonanywhere.com/api/";
 
   getData(){
-    return this.http.get('http://localhost:8000/api/productos/');
+    return this.http.get(this.url+'productos/');
   }
 
   getProductoById(id: string){
-    return this.http.get(`http://localhost:8000/api/productos/${id}/`);
+    return this.http.get(this.url+`productos/${id}/`);
   }
 
   saveProducto(producto:Producto){
-    return this.http.post(`http://localhost:8000/api/productos/`, producto);
+    return this.http.post(this.url+`productos/`, producto);
   }
 
   deleteProducto(id: string){
-    return this.http.delete(`http://localhost:8000/api/productos/${id}/`);
+    return this.http.delete(this.url+`productos/${id}/`);
   }
 
   updateProducto(id: string|number , updateProducto:Producto){
-    return this.http.put(`http://localhost:8000/api/productos/${id}`, updateProducto);
+    return this.http.put(this.url+`productos/${id}/`, updateProducto);
   }
 
 }

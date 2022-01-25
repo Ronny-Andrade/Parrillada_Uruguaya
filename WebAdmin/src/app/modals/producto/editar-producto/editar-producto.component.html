@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <form [formGroup]="form">
+
+        <div class="form-group mb-3">
+            <input type="text" placeholder="Nombre" 
+            [class.is-invalid]="nombre.invalid && nombre.touched"  
+            class="form-control" formControlName="nombre" autofocus>
+            <div *ngIf="nombre.invalid && nombre.touched">
+                <small *ngIf="nombre.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <textarea rows=3 placeholder="Descripcion" maxlength="100"
+            [class.is-invalid]="descripcion.invalid && descripcion.touched"  
+            class="form-control" formControlName="descripcion" autofocus>
+            </textarea>
+            <div *ngIf="descripcion.invalid && descripcion.touched">
+                <small *ngIf="descripcion.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+            </div>
+        </div>
+
+        <div class="form-group mb-3">
+            <input type="text" placeholder="Precio" 
+            [class.is-invalid]="precio.invalid && precio.touched"   
+            class="form-control" formControlName="precio" autofocus>
+            <div *ngIf="precio.invalid && precio.touched">
+                <small *ngIf="precio.errors?.pattern" class="text-danger">
+                    Este campo solo puede contener números</small>
+            </div>
+            <div *ngIf="precio.invalid && precio.touched">
+                <small *ngIf="precio.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+            </div>
+        </div>
+        
+        <div class="form-group mb-3">
+            <input type="file" placeholder="Imagen" accept="image/*"
+            class="form-control" (change)="onImageChanged($event)" formControlName="imagen" autofocus>
+        </div>
+        <div class="form-group mb-3 border rounded text-center">
+            <br>
+            <img class="text-center" src={{imgUrl}} alt={{imgUrl}} height="150px"/>
+            <p>Miniatura</p>
+        </div>
+
+        <div class="form-group mb-3">
+            <select class="form-control" formControlName="visible">
+                <option selected disabled>Seleccione la visibilidad del producto</option>
+                <option value= 1>Visible</option>
+                <option value= 0>No visible</option>               
+            </select>
+        </div>
+
+        <div class="form-group mb-3 text-end">
+            <div class="btn btn-primary" (click)="actualizarProducto()">Guardar</div>
+            <button class="btn btn-danger" [mat-dialog-close]="true">Cancelar</button>
+        </div>
+        
+    </form>
+</div>

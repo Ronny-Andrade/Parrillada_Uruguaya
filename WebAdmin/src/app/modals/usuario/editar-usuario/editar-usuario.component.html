@@ -1,38 +1,97 @@
 <div class="container-fluid">
-    <form action="">
+
+    <form [formGroup]="form">
+
         <div class="form-group mb-3">
-            <input type="text" name="nombre" [(ngModel)]="data.name" placeholder="Nombre" class="form-control" autofocus>
+            <input type="text" class="form-control"
+            formControlName="name" maxlength="30"
+            [class.is-invalid]="name.invalid && name.touched" 
+            placeholder="Nombres" autofocus>
+            <div *ngIf="name.invalid && name.touched">
+                <small *ngIf="name.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+            </div>
         </div>
+
         <div class="form-group mb-3">
-            <input type="text" name="cedula" [(ngModel)]="data.ide_card" placeholder="Cédula" class="form-control" autofocus>
+            <input type="text" class="form-control"  
+            formControlName="lastname" maxlength="30"
+            [class.is-invalid]="lastname.invalid && lastname.touched"
+            placeholder="Apellidos" autofocus>
+            <div *ngIf="lastname.invalid && lastname.touched">
+                <small *ngIf="lastname.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+            </div>
         </div>
+
         <div class="form-group mb-3">
-            <input type="text" name="correo" [(ngModel)]="data.email" placeholder="Correo" class="form-control" autofocus>
+            <input type="text" class="form-control"  
+            formControlName="ide_card" maxlength="10"
+            (change)="idCardValidator()"
+            placeholder="Cédula" autofocus>
+            <div *ngIf=" ide_card.touched">
+            <small *ngIf="!validator" class="text-danger">
+                Escriba una cedula de identidad válida</small>
+            </div>
         </div>
+
         <div class="form-group mb-3">
-            <input type="text" name="telefono" [(ngModel)]="data.cell_phone" placeholder="Teléfono" class="form-control" autofocus>
+            <input type="email" class="form-control"
+            formControlName="email" maxlength="50"
+            [class.is-invalid]="email.invalid && email.touched" 
+            placeholder="Correo" autofocus>
+            <div *ngIf="email.invalid && email.touched">
+                <small *ngIf="email.errors?.required" class="text-danger">
+                    Campo obligatorio</small>
+                <small *ngIf="email.errors?.email" class="text-danger">
+                    Debe usar formato de correo</small>
+            </div>
         </div>
+
         <div class="form-group mb-3">
-            <input type="date" name="fecha-nacimiento" [(ngModel)]="data.fechanac" placeholder="Fecha de nacimiento" class="form-control" autofocus>
+            <input type="text" class="form-control"
+            formControlName="cell_phone" minlength="9" maxlength="10"
+            placeholder="Teléfono" autofocus>
+            <div *ngIf="cell_phone.invalid && cell_phone.touched">
+                <small *ngIf="cell_phone.errors?.pattern" class="text-danger">
+                    Debe contener 9 o 10 números</small>
+            </div>
         </div>
+
         <div class="form-group mb-3">
-            <select class="form-control" name="estado" [(ngModel)]="data.status">
+            <input type="date" class="form-control" 
+            formControlName="fechanac" 
+            placeholder="Fecha de nacimiento" autofocus>
+        </div>
+
+        <div class="form-group mb-3">
+            <select class="form-control"  
+            formControlName="status">
                 <option selected disabled>Selecciona un estado</option>
-                <option value= 1 >Activo</option>
+                <option value= 1>Activo</option>
                 <option value= 0>Inactivo</option>
             </select>
         </div>
-        <div class="form-group mb-3">
-            <select class="form-control" name="rol" [(ngModel)]="data.idrolusuario">
-                <option selected disabled>Selecciona un rol</option>
-                <option value= 1>Administrador</option>
-                <option value= 2>Cliente</option>
+
+        <div *ngIf="admin" class="form-group mb-3">
+            <select class="form-control" 
+            formControlName="idrolusuario">
+                <option value= 0 selected disabled>Selecciona un rol</option>
+                <option value= 1>Cliente</option>
+                <option value= 2>Administrador</option>
+                <option value= 3>Vendedor</option>
+                <option value= 4>Encargado</option>
             </select>
+            
         </div>
+
         <div class="text-end">
-        <button class="btn btn-primary " (click)="actualizarUsuario()">
+        <button class="btn btn-primary" (click)="actualizarUsuario()">
             Guardar
         </button>
-        <button class="btn btn-danger " [mat-dialog-close]="true">Cancelar</button>
+        <button class="btn btn-danger" [mat-dialog-close]="true">Cancelar</button>
         </div>
+
     </form>
+
+</div>

@@ -40,6 +40,16 @@
     margin-right:5px;
 }
 
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    bottom: 15px;
+    right:15px;
+}
+
 mat-icon {
     vertical-align: middle;
     margin-right: 2px;

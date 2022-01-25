@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 import {UsuarioService} from '../../../services/usuario.service';
+
 
 @Component({
   selector: 'app-eliminar-usuario',
@@ -11,7 +13,8 @@ export class EliminarUsuarioComponent implements OnInit {
 
   constructor(private usuarioService:UsuarioService,
     public dialogRef:MatDialogRef<EliminarUsuarioComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private toastr: ToastrService,) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +24,8 @@ export class EliminarUsuarioComponent implements OnInit {
       res => {
         console.log(res);
         this.closeDialog();
-        this.refresh();
+        this.toastr.success("El usuario "+this.data.name+" ha sido eliminado con exito");
+
       },
       err => console.error(err)
     )

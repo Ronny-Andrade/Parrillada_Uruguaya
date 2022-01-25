@@ -1,7 +1,7 @@
 <div class="main-container">
     
     <mat-toolbar class="table-tb">
-        <span>Listado de usuarios</span>
+        <span>Listado de usuarios ({{contador}})</span>
         <span class="example-spacer"></span>
         <button type="button" (click)="createDialog()"  class="btn btn-success">
             <mat-icon >
@@ -45,6 +45,11 @@
         <mat-header-cell *matHeaderCellDef> Cedula </mat-header-cell>
         <mat-cell *matCellDef="let usuario"> {{usuario.ide_card}} </mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="fechacreacion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Registro </mat-header-cell>
+        <mat-cell *matCellDef="let usuario"> {{usuario.fechacreacion}} </mat-cell>
+    </ng-container>
     
     <ng-container matColumnDef="opciones">
         <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
@@ -55,7 +60,7 @@
             <button *ngIf="usuario.status===0" class="btn btn-primary-outline btn-sm" (click)="unblockUser(usuario.id,usuario)"><mat-icon >
                 lock_open
             </mat-icon></button>
-            <button class="btn btn-primary-outline btn-sm" (click)="editDialog(i, usuario.id, usuario.ide_card, usuario.cell_phone, usuario.name, usuario.email, usuario.fechanac, usuario.status, usuario.idrolusuario, usuario.password)"><mat-icon >
+            <button class="btn btn-primary-outline btn-sm" (click)="editDialog(usuario.id, usuario.ide_card, usuario.cell_phone, usuario.name, usuario.lastname, usuario.email, usuario.fechanac, usuario.status, usuario.idrolusuario, usuario.password)"><mat-icon >
                 edit
             </mat-icon></button>
             <button class="btn btn-primary-outline btn-sm" (click)="deleteDialog(usuario.id,usuario.name)"><mat-icon >
@@ -79,4 +84,5 @@
     <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true" ></mat-header-row>
     <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
 </mat-table>
+
 </div>

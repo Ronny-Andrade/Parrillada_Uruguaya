@@ -21,7 +21,6 @@ import { UsuariomodalsComponent } from './modals/usuariomodals/usuariomodals.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { EditarProductoComponent } from './componentes/productos/editar-producto/editar-producto.component';
 import { CombosComponent } from './componentes/combos/combos.component';
 import { EditarCombosComponent } from './componentes/combos/editar-combos/editar-combos.component';
 import { MatTreeModule } from '@angular/material/tree';
@@ -33,8 +32,24 @@ import {MatSortModule} from '@angular/material/sort';
 import { CrearUsuarioComponent } from './modals/usuario/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './modals/usuario/editar-usuario/editar-usuario.component';
 import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/eliminar-usuario.component';
-;
-
+import { ToastrModule } from 'ngx-toastr';
+import { AdminsComponent } from './componentes/admins/admins.component';
+import { PrincipalesComponent } from './componentes/principales/principales.component';
+import { BebidasComponent } from './componentes/bebidas/bebidas.component';
+import { AdicionalesComponent } from './componentes/adicionales/adicionales.component';
+import { CrearProductoComponent } from './modals/producto/crear-producto/crear-producto.component';
+import { EliminarProductoComponent } from './modals/producto/eliminar-producto/eliminar-producto.component';
+import { EditarProductoComponent } from './modals/producto/editar-producto/editar-producto.component';
+import { OfertasComponent } from './componentes/ofertas/ofertas.component';
+import { CuponesComponent } from './componentes/cupones/cupones.component';
+import { CrearOfertaComponent } from './modals/oferta/crear-oferta/crear-oferta.component';
+import { EditarOfertaComponent } from './modals/oferta/editar-oferta/editar-oferta.component';
+import { EliminarOfertaComponent } from './modals/oferta/eliminar-oferta/eliminar-oferta.component';
+import { AsignarOfertaComponent } from './modals/oferta/asignar-oferta/asignar-oferta.component';
+import { AsignarCuponComponent } from './modals/cupon/asignar-cupon/asignar-cupon.component';
+import { CrearCuponComponent } from './modals/cupon/crear-cupon/crear-cupon.component';
+import { EditarCuponComponent } from './modals/cupon/editar-cupon/editar-cupon.component';
+import { EliminarCuponComponent } from './modals/cupon/eliminar-cupon/eliminar-cupon.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +57,6 @@ import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/elim
     UsuarioComponent,
     ProductosComponent,
     UsuariomodalsComponent,
-    EditarProductoComponent,
     CombosComponent,
     EditarCombosComponent,
     SidenavComponent,
@@ -50,7 +64,25 @@ import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/elim
     CrearUsuarioComponent,
     EditarUsuarioComponent,
     EliminarUsuarioComponent,
+    AdminsComponent,
+    PrincipalesComponent,
+    BebidasComponent,
+    AdicionalesComponent,
+    CrearProductoComponent,
+    EliminarProductoComponent,
+    EditarProductoComponent,
+    OfertasComponent,
+    CuponesComponent,
+    CrearOfertaComponent,
+    EditarOfertaComponent,
+    EliminarOfertaComponent,
+    AsignarOfertaComponent,
+    AsignarCuponComponent,
+    CrearCuponComponent,
+    EditarCuponComponent,
+    EliminarCuponComponent,
 
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +103,12 @@ import { EliminarUsuarioComponent } from './modals/usuario/eliminar-usuario/elim
     MatInputModule,
     MatSortModule,
     MatDialogModule,
-
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true,
+    }),
 
   ],
   providers: [UsuarioService, ProductoService],

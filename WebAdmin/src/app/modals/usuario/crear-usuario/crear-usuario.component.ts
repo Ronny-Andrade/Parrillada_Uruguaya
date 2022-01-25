@@ -1,11 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import {UsuarioService} from '../../../services/usuario.service';
-import { Usuario } from 'src/app/modelos/usuarios';
-import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
-
+import { UsuarioService } from '../../../services/usuario.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -16,6 +13,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   validator:boolean=null;
   hide:boolean=true;
+  admin:boolean=this.data.isAdmin;
 
   get idrolusuario(){
     return this.form.get('idrolusuario')
@@ -62,16 +60,15 @@ export class CrearUsuarioComponent implements OnInit {
     email: ['',[Validators.required,Validators.email]],
     password: ['',[Validators.required]],
     fechanac: [null],
-    status: [2],
+    status: [1],
   })
 
   
 
   constructor(private usuarioService:UsuarioService,
-    private activatedRoute: ActivatedRoute,
     public dialogRef:MatDialogRef<CrearUsuarioComponent>,
-    private fb: FormBuilder,
-    ) { }
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private fb: FormBuilder, private toastr: ToastrService,) { }
 
   
 
@@ -81,18 +78,22 @@ export class CrearUsuarioComponent implements OnInit {
 
   guardarUsuario(){
     console.log(this.form.value)
+    if(this.admin===false){
+      //si se crea desde la pestaña de clientes no se escoge rol, este es por defecto cliente (1)
+      this.form.value.idrolusuario=1;
+    }
     if(this.form.valid){
       this.usuarioService.saveUsuario(this.form.value).subscribe(
         res => {
           console.log(res);
           this.closeDialog();
-          this.refresh();
+          this.toastr.success("El usuario "+this.form.value.name+" ha sido creado con exito");
         },
         err => console.error(err)
       )
     }else{
       console.log("no se envio el usuario porque hay campos invalidos");
-      alert("No se agrego el usuario ya que faltan campos o hay campos invalidos")
+      this.toastr.warning("Asegurese de enviar todos los campos requeridos");
     }
     
   }
