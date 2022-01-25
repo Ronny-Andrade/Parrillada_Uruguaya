@@ -26,4 +26,5 @@ Hu11: Configurar ofertas
 Hu12: Crud de los adicionales
 
 Hu14: Platos recomendados
+Hu15: Visualizar promociones
 
