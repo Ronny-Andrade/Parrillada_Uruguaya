@@ -24,7 +24,7 @@ Hu09: Funcionamiento de cupones
 Hu10: Crud de las ofertas
 Hu11: Configurar ofertas 
 Hu12: Crud de los adicionales
-
+Hu13: Platos mas consumidos
 Hu14: Platos recomendados
 Hu15: Visualizar promociones
 
